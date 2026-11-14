@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario oficial para reportar animales en situación de abandono o emergencia.">
+    <title>Reportar Rescate | Sistema de Rescate y Adopción Animal</title>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Control de Rescate y Adopción</h1>
+        <p>Módulo de captura de alertas ciudadanas para la atención oportuna de animales vulnerables.</p>
+        
+        <nav aria-label="Menú principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reportar.html">Reportar Rescate</a></li>
+                <li><a href="rescates.html">Listado de Rescates y Adopción</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>Recomendaciones antes de reportar</h2>
+            <p>
+                Para agilizar la labor de los rescatistas, asegúrate de proporcionar referencias claras y datos verdaderos. 
+                Si el animal se muestra agresivo debido al miedo, te sugerimos mantener una distancia prudente mientras llega el equipo de apoyo.
+            </p>
+            <p>
+                <strong>Nota:</strong> Si el caso involucra un accidente grave de tránsito o una emergencia vital, selecciona estrictamente el nivel 
+                de urgencia <em>Crítico</em>.
+            </p>
+        </section>
+
+        <section>
+            <h2>Formulario de Registro de Avistamiento</h2>
+
+            <p>
+                <strong>Nota:</strong> Completar los campos obligatorios para registrar un nuevo rescate en el sistema.
+            </p>
+            
+            <form action="#" method="post">
+                
+                <fieldset>
+                    <legend>1. Datos del Ciudadano</legend>
+                    
+                    <p>
+                        <label for="nombre-reportante">Nombre y apellido:</label><br>
+                        <input type="text" id="nombre-reportante" name="nombre_reportante" required minlength="3" maxlength="80" placeholder="Ej. Andrea Gómez">
+                    </p>
+
+                    <p>
+                        <label for="telefono-contacto">Teléfono celular (10 dígitos):</label><br>
+                        <input type="tel" id="telefono-contacto" name="telefono_contacto" required pattern="[0-9]{10}" maxlength="10" placeholder="Ej. 0987654321">
+                    </p>
+
+                    <p>
+                        <label for="correo-contacto">Correo electrónico:</label><br>
+                        <input type="email" id="correo-contacto" name="correo_contacto" placeholder="correo@ejemplo.com" required>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>2. Características del Animal</legend>
+                    
+                    <p>
+                        <label for="especie">Especie:</label><br>
+                        <select id="especie" name="especie" required>
+                            <option value="">-- Seleccione una especie --</option>
+                            <option value="perro">Canino (Perro)</option>
+                            <option value="gato">Felino (Gato)</option>
+                            <option value="ave">Ave silvestre / doméstica</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="tamano">Tamaño estimado:</label><br>
+                        <select id="tamano" name="tamano" required>
+                            <option value="">-- Seleccione el tamaño --</option>
+                            <option value="pequeno">Pequeño (Menor a 10 kg)</option>
+                            <option value="mediano">Mediano (Entre 10 y 25 kg)</option>
+                            <option value="grande">Grande (Mayor a 25 kg)</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <span>Nivel de urgencia del rescate:</span><br>
+                        <input type="radio" id="urgencia-baja" name="urgencia" value="baja" required>
+                        <label for="urgencia-baja">Baja (Animal estable, aparenta estar perdido)</label><br>
+                        
+                        <input type="radio" id="urgencia-media" name="urgencia" value="media">
+                        <label for="urgencia-media">Media (Signos de desnutrición o herida menor)</label><br>
+                        
+                        <input type="radio" id="urgencia-critica" name="urgencia" value="critica">
+                        <label for="urgencia-critica">Crítica (Atropello, hemorragia o riesgo inminente)</label>
+                    </p>
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+                    <legend>3. Localización y Detalles del Suceso</legend>
+                    
+                    <p>
+                        <label for="fecha-avistamiento">Fecha del avistamiento:</label><br>
+                        <input type="date" id="fecha-avistamiento" name="fecha_avistamiento" required>
+                    </p>
+
+                    <p>
+                        <label for="direccion">Ubicación exacta o referencias:</label><br>
+                        <input type="text" id="direccion" name="direccion" required minlength="10" maxlength="150" placeholder="Ej. Av. de la Prensa y Calle Los Pinos, junto al parque lineal">
+                    </p>
+
+                    <p>
+                        <label for="descripcion">Descripción detallada:</label><br>
+                        <textarea id="descripcion" name="descripcion" rows="5" cols="50" required minlength="15" placeholder="Describa el color del pelaje, si lleva collar, marcas distintivas o comportamiento..."></textarea>
+                    </p>
+
+                </fieldset>
+
+                <br>
+
+                <p>
+                    <button type="submit">Enviar Reporte Oficial</button>
+                    <button type="reset">Borrar Campos</button>
+                </p>
+
+           </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Módulo de Aplicaciones Web - Práctica Estudiantil</p>
+    </footer>
+
+</body>
+</html>
